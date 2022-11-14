@@ -1,0 +1,13 @@
+	GLuint ubo;
+
+/*glGenBuffers(1, &ubo);
+	glBindBuffer(GL_UNIFORM_BUFFER, ubo); //bind
+	glUniformBlockBinding(heightMap->GetShader()->GetProgram(), glGetUniformBlockIndex(skinning_shader->GetProgram(), "matrices"), 0); // bind to the "matrices" variable in the shader
+	glBindBufferBase(GL_UNIFORM_BUFFER, 0, ubo);													// change 0 to 1 if adding another ubo
+	glBufferData(GL_UNIFORM_BUFFER, 3 * sizeof(Matrix4), NULL, GL_STATIC_DRAW);						// "3 * sizeof(Matrix4)" bit notes the total size of the UBO, change if adding more stuff there
+
+	projMatrix = Matrix4::Perspective(1.0f, 10000.0f, (float)width / (float)height, 45.0f);
+	
+	glBufferSubData(GL_UNIFORM_BUFFER, 2*sizeof(Matrix4), sizeof(Matrix4), &projMatrix.values);		// "2*sizeof(Matrix4)" bit is how much memory to skip to start writing this matrix 
+																									// "sizeof(Matrix4)" how many bits to write
+	glBindBuffer(GL_UNIFORM_BUFFER, 0);//unbind*/
