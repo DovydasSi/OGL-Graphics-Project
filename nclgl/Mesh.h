@@ -85,12 +85,13 @@ public:
 
 	bool GetSubMesh(int i, const SubMesh* s) const;
 	bool GetSubMesh(const std::string& name, const SubMesh* s) const;
+	void	GenerateNormals();
+	void	GenerateTangents();
 
 protected:
 	void	BufferData();
 
-	void	GenerateNormals();
-	void	GenerateTangents();
+
 	Vector4 GenerateTangent(int vA, int vB, int vC);
 	bool	GetVertexIndicesForTri(unsigned int i, unsigned int& a, unsigned int& b, unsigned int& c) const;
 

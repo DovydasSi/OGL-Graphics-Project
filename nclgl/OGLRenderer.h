@@ -62,6 +62,7 @@ protected:
 	virtual void	Resize(int x, int y);	
 	void			UpdateShaderMatrices();
 	void			BindShader(Shader*s);
+	Shader*			GetCurrentShader() { return currentShader; }
 	void			SetTextureRepeating(GLuint target, bool state);
 	void			SetShaderLight(const Light& l);
 	void			SetShaderLight(const DirLight& l);
@@ -85,7 +86,7 @@ protected:
 	bool	init;			//Did the renderer initialise properly?
 
 private:
-	Shader* currentShader;	
+	Shader* currentShader;
 	HDC		deviceContext;	//...Device context?
 	HGLRC	renderContext;	//Permanent Rendering Context
 #ifdef _DEBUG

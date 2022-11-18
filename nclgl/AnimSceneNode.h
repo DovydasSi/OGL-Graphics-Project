@@ -13,11 +13,8 @@ public:
 	void Update(float dt) override;
 	void Draw(const OGLRenderer& r) override;
 protected:
-	MeshAnimation* curr_anim;
-	vector<MeshAnimation* > animations;
+	MeshAnimation* anim;
 
 	int currentFrame;
 	float frameTime;
-
-	void ChangeAnimation(const std::string animfile);
 };

@@ -14,19 +14,44 @@ public:
 	 void RenderScene()				override;
 	 void UpdateScene(float msec)	override;
 
-	 void DrawNode(SceneNode* n);
+protected:
+	void LoadShaders();
+
+	void DrawNode(SceneNode* n);
+	void DrawSkybox();
+	void DrawShadowScene();
+	void DrawNodeMesh(SceneNode* n, Shader* s);
+	void ManageInputs();
 
 protected:
-	WorldHeightMap* heightMap;
-	Camera* camera;
 	Shader* world_shader;
 	Shader* skinning_shader;
 	Shader* object_shader;
+	Shader* cubemap_shader;
+	Shader* water_shader;
+	Shader* shadow_shader;
+
+	WorldHeightMap* heightMap;
+	Mesh* basicQuad;
+	Camera* camera;
+	
+	Mesh* dragon_mesh; 
+	MeshMaterial* dragon_mat; 
+	MeshAnimation* dragon_anim;
+
+	Mesh* tower_mesh; 
+	MeshMaterial* tower_mat;
+
 	DirLight* light;
 
 	GLuint ubo;
+	GLuint cubeMap;
+	GLuint shadowTex;
+	GLuint shadowFBO;
 
 	SceneNode* root;
 
 	float currentTime;
+
+	bool spin_camera;
 };

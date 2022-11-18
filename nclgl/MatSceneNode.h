@@ -12,4 +12,5 @@ public:
 protected:
 	MeshMaterial* meshMat;
 	vector <GLuint > matTextures;
+	vector <GLuint > bumpTextures;
 };

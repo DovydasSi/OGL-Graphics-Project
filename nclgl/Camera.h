@@ -1,12 +1,19 @@
 #pragma once
 #include "Matrix4.h"
 #include "Vector3.h"
+#include <vector>
 
 struct CameraPath
 {
 	Vector3 position;
-	Vector3 rotation;
+	float pitch;
+	float yaw;
 	float speed;
+
+	CameraPath() : position(Vector3(0, 0, 0)), pitch(0), yaw(0), speed(1) {}
+
+	CameraPath(Vector3 pos, float pit, float yw, float sp) :
+		position(pos), pitch(pit), yaw(yw), speed(sp) {}
 };
 
 class Camera
@@ -35,7 +42,7 @@ public:
 	void		SetYaw(float val)			{ yaw = val; }
 
 	float		GetPitch()					{ return pitch; }
-	void		GetPitch(float val)			{ pitch = val; }
+	void		SetPitch(float val)			{ pitch = val; }
 
 	void		SetMode(CAMERA_MODE m)		{ mode = m; }
 
@@ -46,6 +53,17 @@ protected:
 	CAMERA_MODE mode;
 
 	void		HandleManualControls(float speed);
-	Vector3		HandleAutomaticControls(CameraPath& next);
-	CameraPath cp;
+	void		LoadPaths();
+	CameraPath	TravelToNext();
+
+	CameraPath nextPath;
+	std::vector<CameraPath> paths;
+	bool is_travelling;
+
+	Vector3 path_to_next;
+	float yaw_to_next;
+	int yaw_multiplier;
+	float pitch_to_next;
+	float timeTravelled;
+	int revealed_index;
 };

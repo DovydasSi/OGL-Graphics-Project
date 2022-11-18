@@ -13,5 +13,5 @@ public:
 	void Draw(const OGLRenderer& r) override;
 
 protected:
-
+	float totalTime;
 };

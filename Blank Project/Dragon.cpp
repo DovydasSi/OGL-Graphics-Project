@@ -1,8 +1,9 @@
 #include "Dragon.h"
 
 
-Dragon::Dragon(Shader * s, Mesh* m, MeshAnimation* a, MeshMaterial* mm) : AnimSceneNode(s, m, a, mm)
+Dragon::Dragon(Shader* s, Mesh* m, MeshAnimation* a, MeshMaterial* mm) : AnimSceneNode(s, m, a, mm), totalTime(0.0f)
 { }
+
 
 Dragon::~Dragon()
 {
@@ -10,9 +11,6 @@ Dragon::~Dragon()
 
 void Dragon::Update(float dt)
 {
-	// Move the dragon
-	
-
 	AnimSceneNode::Update(dt);
 }
 

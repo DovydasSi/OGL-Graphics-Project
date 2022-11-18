@@ -8,12 +8,16 @@ in vec3 position;
 in vec2 texCoord;
 in vec4 jointWeights;
 in ivec4 jointIndices;
+in vec3 normal; 
+in vec4 colour;
 
 uniform mat4 joints [128];
 
 out Vertex {
-vec2 texCoord;
-vec4 weights;
+	vec2 texCoord;
+	vec4 weights;
+	vec3 normal;
+	vec3 pos;
 } OUT;
 
 void main(void) {
@@ -30,5 +34,10 @@ void main(void) {
 	}
 	mat4 mvp = projMatrix * viewMatrix * modelMatrix;
 	gl_Position = mvp * vec4(skelPos.xyz , 1.0);
+
+	mat3 normalMatrix = transpose(inverse(mat3(modelMatrix )));
+	OUT.normal = normalize(normalMatrix * normalize(normal ));
+
 	OUT.texCoord = texCoord;
+	OUT.pos = position;
 }

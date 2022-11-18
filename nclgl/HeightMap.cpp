@@ -17,7 +17,7 @@ HeightMap::HeightMap(const std::string name)
 	colours = new Vector4[numVertices];
 
 	Vector3 vertexScale = Vector3(2.0f, 1.0f, 2.0f);
-	Vector2 textureScale = Vector2(1/128.0f, 1/182.0f);
+	Vector2 textureScale = Vector2(1/128.0f, 1/128.0f);
 	
 	for (int z = 0; z < iHeight; ++z) {
 		for (int x = 0; x < iWidth; ++x) {
@@ -49,6 +49,7 @@ HeightMap::HeightMap(const std::string name)
 	}
 
 	GenerateNormals();
+	GenerateTangents();
 	BufferData();
 	
 	heightmapSize.x = vertexScale.x * (iWidth - 1);

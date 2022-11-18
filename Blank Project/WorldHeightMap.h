@@ -16,6 +16,8 @@ protected:
 
 	//Add more textures
 	GLuint terrainTex;
+	GLuint terBumpTex;
 	GLuint grassTex;
 	GLuint snowTex;
+	GLuint shadowTex;
 };

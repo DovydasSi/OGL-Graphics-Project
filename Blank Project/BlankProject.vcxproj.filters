@@ -32,6 +32,12 @@
     <ClCompile Include="ObjectLookup.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="WaterNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OrbitNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Renderer.h">
@@ -44,6 +50,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ObjectLookup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="WaterNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OrbitNode.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -64,6 +76,30 @@
       <Filter>Shader Files</Filter>
     </None>
     <None Include="..\Shaders\ObjectVertex.glsl">
+      <Filter>Shader Files</Filter>
+    </None>
+    <None Include="..\Shaders\SkyboxFragment.glsl">
+      <Filter>Shader Files</Filter>
+    </None>
+    <None Include="..\Shaders\SkyboxVertex.glsl">
+      <Filter>Shader Files</Filter>
+    </None>
+    <None Include="..\Shaders\reflectFragment.glsl">
+      <Filter>Shader Files</Filter>
+    </None>
+    <None Include="..\Shaders\reflectVertex.glsl">
+      <Filter>Shader Files</Filter>
+    </None>
+    <None Include="..\Shaders\shadowFrag.glsl">
+      <Filter>Shader Files</Filter>
+    </None>
+    <None Include="..\Shaders\shadowVert.glsl">
+      <Filter>Shader Files</Filter>
+    </None>
+    <None Include="..\Shaders\ShadowedWorldFrag.glsl">
+      <Filter>Shader Files</Filter>
+    </None>
+    <None Include="..\Shaders\ShadowedWorldVert.glsl">
       <Filter>Shader Files</Filter>
     </None>
   </ItemGroup>

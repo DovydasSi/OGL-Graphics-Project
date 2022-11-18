@@ -139,20 +139,32 @@
     <ClCompile Include="BlankProject.cpp" />
     <ClCompile Include="Dragon.cpp" />
     <ClCompile Include="ObjectLookup.cpp" />
+    <ClCompile Include="OrbitNode.cpp" />
     <ClCompile Include="Renderer.cpp" />
+    <ClCompile Include="WaterNode.cpp" />
     <ClCompile Include="WorldHeightMap.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Dragon.h" />
     <ClInclude Include="ObjectLookup.h" />
+    <ClInclude Include="OrbitNode.h" />
     <ClInclude Include="Renderer.h" />
+    <ClInclude Include="WaterNode.h" />
     <ClInclude Include="WorldHeightMap.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Shaders\ObjectFragment.glsl" />
     <None Include="..\Shaders\ObjectVertex.glsl" />
+    <None Include="..\Shaders\reflectFragment.glsl" />
+    <None Include="..\Shaders\reflectVertex.glsl" />
+    <None Include="..\Shaders\ShadowedWorldFrag.glsl" />
+    <None Include="..\Shaders\ShadowedWorldVert.glsl" />
+    <None Include="..\Shaders\shadowFrag.glsl" />
+    <None Include="..\Shaders\shadowVert.glsl" />
     <None Include="..\Shaders\SkinningFragment.glsl" />
     <None Include="..\Shaders\SkinningVertex.glsl" />
+    <None Include="..\Shaders\SkyboxFragment.glsl" />
+    <None Include="..\Shaders\SkyboxVertex.glsl" />
     <None Include="..\Shaders\WorldFragment.glsl" />
     <None Include="..\Shaders\WorldVertex.glsl" />
   </ItemGroup>

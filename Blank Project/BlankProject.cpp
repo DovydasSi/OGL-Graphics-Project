@@ -2,7 +2,8 @@
 #include "Renderer.h"
 
 int main()	{
-	Window w("Make your own project!", 1280, 720, false);
+	string title = "Elden Ring 2";
+	Window w(title, 1280, 720, false);
 
 	if(!w.HasInitialised()) {
 		return -1;
@@ -17,12 +18,15 @@ int main()	{
 	w.ShowOSPointer(false);
 
 	while(w.UpdateWindow()  && !Window::GetKeyboard()->KeyDown(KEYBOARD_ESCAPE)){
-		renderer.UpdateScene(w.GetTimer()->GetTimeDeltaSeconds());
+
+		float sec = w.GetTimer()->GetTimeDeltaSeconds();
+		renderer.UpdateScene(sec);
 		renderer.RenderScene();
 		renderer.SwapBuffers();
 		if (Window::GetKeyboard()->KeyDown(KEYBOARD_F5)) {
 			Shader::ReloadAllShaders();
 		}
+		w.SetTitle(title + " (FPS: " + std::to_string(1/sec) + ")");
 	}
 	return 0;
 }
